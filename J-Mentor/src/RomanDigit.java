@@ -16,8 +16,12 @@ public class RomanDigit {
         Acalc(opera,rom1,rom2);
     }
 
-    public RomanDigit(String opera,String romDS1,String romDS2) {
-
+    public RomanDigit(String opera,String romDS1,String romDS2)throws MyException {
+        for (int i = 0;i <= 9;i++) {
+            if (romDS2.equals(digit[i])) {
+                throw new MyException("Введите римское число");
+            }
+        }
         int romD1 = 0;
         int romD2 = 0;
         for (int i = 0; i < 10; i++) {
@@ -35,13 +39,13 @@ public class RomanDigit {
     public static int Acalc(String opera, int n1, int n2){
         //Write the calulator
 
-        if (opera.equals("+")) {result=n1+n2;}
+        if (opera.equals("+")) {result = n1 + n2;}
 
-        else if (opera.equals("-")) {result=n1-n2;}
+        else if (opera.equals("-")) {result = n1 - n2;}
 
-        else if (opera.equals("*")) {result=n1*n2;}
+        else if (opera.equals("*")) {result = n1 * n2;}
 
-        else if (opera.equals("/")) {result=n1/n2;}
+        else if (opera.equals("/")) {result = n1 / n2;}
 
         return result;
     }
